@@ -39,7 +39,7 @@ int pop(struct Node* tp ){
     }
 } 
 
-int peek(struct Node *top){
+int peek(int pos){
     if(top == NULL){
         printf("stack is Underflow!");
         return -1;
@@ -47,14 +47,16 @@ int peek(struct Node *top){
         struct Node *ptr = top;
         int i = 0;
         while(i < pos-1 && ptr != NULL){
+            ptr = ptr->next;
             i++;
         }
-        
-        top = top->data;
-
-
+        if(ptr != NULL) return ptr->data;
+        else return -1;
     }
+}
 
+int stackTop(){
+    return top->data;
 }
 
 int isEmpty(struct Node *top){
@@ -81,8 +83,12 @@ int main(){
     StackTraversal(top);
 
     int element = pop(top);
-    printf("Poped ele is : %d\n", element);
+    printf("\nPoped ele is : %d\n", element);
     StackTraversal(top);
+
+    for(int i = 1; i <= 4; i++){
+        printf("Peek value at %d is : %d\n", i, peek(i));
+    }
 
     return 0;
 }
