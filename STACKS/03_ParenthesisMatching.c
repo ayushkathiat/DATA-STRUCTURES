@@ -74,4 +74,6 @@ int main(){
     else{
         printf("THe parenthesis is not matching");
     }
+
+    return 0;
 }
