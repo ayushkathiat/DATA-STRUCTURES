@@ -21,6 +21,7 @@ char push(struct stack *s, char value){
 char pop(struct stack *s){
     if(s->top == -1){
         printf("Stack is underflow!");
+        return 0;
     }else{
         char val = s->arr[s->size];
         s->top--;
