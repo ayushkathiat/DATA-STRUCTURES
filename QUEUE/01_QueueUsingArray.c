@@ -44,14 +44,18 @@ int dequeue(struct queue *q){
 }
 
 int main(){
-    struct queue *q;
+    struct queue *q = (struct queue *)malloc(sizeof(struct queue));
     q->size = 10;
-    q->f, q->r = -1;
+    q->f = q->r = -1;
     q->arr = (int *)malloc(q->size * sizeof(int));
+
+    enqueue(q, 10);
+    printf("Dequeue ele is : %d\n", dequeue(q));
 
     if(isEmpty(q)){
         printf("Queue is EMpty!");
     }
+
 
     return 0;
 }
