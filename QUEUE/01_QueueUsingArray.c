@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct queue{
     int size;
     int f, r;
@@ -44,19 +43,15 @@ int dequeue(struct queue *q){
     return a;
 }
 
-
 int main(){
     struct queue *q;
     q->size = 10;
     q->f, q->r = -1;
     q->arr = (int *)malloc(q->size * sizeof(int));
 
-
     if(isEmpty(q)){
         printf("Queue is EMpty!");
     }
 
     return 0;
-    
-
 }
