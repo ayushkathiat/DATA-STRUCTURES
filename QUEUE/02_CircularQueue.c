@@ -28,6 +28,7 @@ void Enqueue(struct CircularQueue *q, int val){
     else{
         q->r=(q->r+1)%q->size;
         q->arr[q->r] = val;
+        printf("Enqued ele is : %d\n", val);
     }
 }
 
@@ -47,11 +48,26 @@ int main(){
 
     struct CircularQueue *q = (struct CircularQueue *)malloc(sizeof(struct CircularQueue));
     q->f = q->r = 0;
-    q->size = 20;
+    q->size = 4;
     q->arr = (int *)malloc(q->size*sizeof(int));
 
     Enqueue(q,12);
+    Enqueue(q,1);
+    Enqueue(q,2);
+    Enqueue(q,123);
+    Enqueue(q,1234);
     printf("Dequeue ele is : %d\n", Dequeue(q));
+    printf("Dequeue ele is : %d\n", Dequeue(q));
+    printf("Dequeue ele is : %d\n", Dequeue(q));
+
+    if(isEmpty(q)){
+        printf("Queue is EMpty!\n");
+    }
+ 
+    if(isFull(q)){
+        printf("Queue is Full!\n");
+    }
+
 
     return 0;
 }
