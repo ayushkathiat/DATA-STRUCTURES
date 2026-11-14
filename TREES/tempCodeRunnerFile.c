@@ -1,0 +1,2 @@
+ Inorder(p);
+    isBST(p);
